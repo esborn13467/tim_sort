@@ -35,7 +35,13 @@ def merge(arr, l, m, r):
         arr[k] = right[j]
         j += 1
         k += 1
-
+def calculate_min_run(n):
+    r = 0
+    while n >= 64:
+        r |= n & 1
+        n >>= 1
+    return n + r
+    
 def tim_sort(arr):
     n = len(arr)
     min_run = calculate_min_run(n)
@@ -55,12 +61,7 @@ def tim_sort(arr):
         
         size = 2 * size
 
-def calculate_min_run(n):
-    r = 0
-    while n >= 64:
-        r |= n & 1
-        n >>= 1
-    return n + r
+
 
 # Example usage:
 arr = [5, 21, 7, 23, 19]
