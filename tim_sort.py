@@ -1,3 +1,10 @@
+def calculate_min_run(n):
+    r = 0
+    while n >= 64:
+        r |= n & 1
+        n >>= 1
+    return n + r
+
 def insertion_sort(arr, left, right):
     for i in range(left + 1, right + 1):
         key = arr[i]
@@ -35,12 +42,7 @@ def merge(arr, l, m, r):
         arr[k] = right[j]
         j += 1
         k += 1
-def calculate_min_run(n):
-    r = 0
-    while n >= 64:
-        r |= n & 1
-        n >>= 1
-    return n + r
+
     
 def tim_sort(arr):
     n = len(arr)
